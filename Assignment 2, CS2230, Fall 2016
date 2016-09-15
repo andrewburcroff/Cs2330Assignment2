@@ -1,0 +1,26 @@
+Assignment 2, CS2230, Fall 2016
+Division Algorithm, Mask and Shift, Character buffers and string handling
+
+You will write a program in a single C source file that will accept a value from the command line and various bases, and will output that value on separate lines using a single %s format descriptor, with appropriate descriptive text. 
+
+$MyAssignment2 2734567 16 256        <and more ...>     NB see atoi()
+would ouput 
+
+The decimal value 2734567 is equivalent to 
+29B9E7 Hex
+1.90.230.231  Base 256
+
+The program can be run as many times as we wish to run it. Bases can be 2 to 16 and 256.
+IF the base is a power of 2 you MUST use a 'mask and shift' algorithm, using the & (AND) and >> (right shift) operators.
+
+Your program MUST be organized in the following fashion.
+
+Apart from the main there will be 3 functions which are sent a Value and Base and will each return a char * that has been filled with appropriate characters. That char * will be allocated using the malloc() library routine which simply returns a pointer to the first of number of consecutive bytes requested. (See mallog(c)).
+
+One of the 3 functions uses the arithmetic division algorithm, another uses mask and shift, and the third handles base 256. 
+
+As the char * return values are created, the main will put them into a single buffer for output. (Perhaps you will wait until all arguments are processed before 'stitching' these together). Then and only then will a printf() using a single %s format desciptor be executed. 
+
+Stitching these together may be done with strncpy() -- see man page ? -- or sprintf();
+
+This assignment will pushed by Tuesday 11:57pm for full credit. 
